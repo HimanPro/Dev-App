@@ -49,9 +49,17 @@ function App() {
           </div>
         </div>
         {/* Cryptobit Mobile Menu Area */}
-        <div className="mobile-menu-area d-sm-block d-md-block d-lg-none ">
+        <div className="mobile-menu-area d-sm-block d-md-block d-lg-none bg-black">
           <div className="mobile-menu">
             <nav className="cripto_menu">
+              <div className="logo">
+                <a className="logo_img upper1" href="index.html" title="cryptobit">
+                  <img src="/images/logo2.png" alt />
+                </a>
+                <a className="main_sticky upper1" href="index.html" title="cryptobit">
+                  <img src="/images/logo2.png" alt="astute" />
+                </a>
+              </div>
               <ul className="nav_scroll">
                 <li><a href="#">Home <span>+</span></a>
                 </li>
@@ -65,8 +73,8 @@ function App() {
                 <li><a href="#">Contact</a></li>
               </ul>
               <div className="header-button upper1">
-                    <ConnectButton />
-                  </div>
+                <ConnectButton />
+              </div>
             </nav>
           </div>
         </div>
@@ -78,7 +86,7 @@ function App() {
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="hero-content">
-                  <WalletDetails/>
+                  <WalletDetails />
                   <div className="hero-title">
                     <h1>Experience of</h1>
                     <h1>Digital Transection</h1>

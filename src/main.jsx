@@ -6,7 +6,7 @@ import App from "./App";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { bsc, bscTestnet, opBNBTestnet, polygon } from "wagmi/chains";
+import { arbitrum, arbitrumGoerli, avalanche, bsc, bscTestnet, cronos, fantom, gnosis, mainnet, opBNBTestnet, optimism, optimismGoerli, polygon, polygonMumbai, sepolia, zksync } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
@@ -35,7 +35,7 @@ export const config = getDefaultConfig({
 
   appName: "My RainbowKit App",
   projectId: "YOUR_PROJECT_ID",
-  chains: [bsc, opBNBTestnet, polygon,bscTestnet ],
+  chains: [bsc, opBNBTestnet, polygon,bscTestnet, mainnet, avalanche, fantom, gnosis, arbitrum, optimism, sepolia, polygonMumbai, arbitrumGoerli, optimismGoerli, cronos, zksync ],
   ssr: true,
 });
 

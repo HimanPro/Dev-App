@@ -159,7 +159,13 @@ const WalletData = ({ address, chainId }) => {
         10: "Optimism Mainnet",
         100: "Gnosis Chain",
         250: "Fantom Opera",
+        11155111: "Sepolia Testnet",
+        421613: "Arbitrum Goerli Testnet",
+        420: "Optimism Goerli Testnet",
+        25: "Cronos Mainnet",
+        324: "zkSync Era Mainnet"
     };
+    
 
     return (
         <>

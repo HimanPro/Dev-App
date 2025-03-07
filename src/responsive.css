@@ -2,7 +2,7 @@
 
 @media (min-width: 1200px) and (max-width: 1500px) {
     .cryptobit_menu>ul>li>a {
-        margin: 30px 8px;
+        /* margin: 30px 8px; */
         font-size: 15px;
     }
     .upper.cryptobit_menu>ul>li>a {
@@ -71,7 +71,7 @@
         width: 100% !important;
     }
     .cryptobit_menu>ul>li>a {
-        margin: 30px 5px;
+        /* margin: 30px 5px; */
         font-size: 14px;
     }
     .upper.cryptobit_menu>ul>li>a {
@@ -1915,4 +1915,16 @@
     .service-main-thumb img {
         width: 100%;
     }
+}
+
+
+
+.nav_scroll{
+    display: none;
+}
+.cripto_menu{
+    display: flex;
+    padding: 15px 25px;
+    justify-content: space-between;
+    align-items: center;
 }
