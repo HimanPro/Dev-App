@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useAccount, useBalance, useEnsName, useDisconnect, useSignTypedData, useChainId } from "wagmi";
-import { Button, Modal } from 'antd';
-import { fetchBalance } from '@wagmi/core'
-import { config } from "../main";
+import { useAccount, useBalance, useEnsName, useDisconnect, useChainId } from "wagmi";
+import { Modal } from 'antd';
+
 const WalletDetails = () => {
     const { address, isConnected } = useAccount();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { disconnect } = useDisconnect();
-    const { signTypedDataAsync } = useSignTypedData();
-    const chainId = useChainId(); // Chain ID dynamically fetch hoga
-
-
-
-    console.log(address, "address");
-
+    const chainId = useChainId();
     const [verified, setVerified] = useState(false);
-    const [signature, setSignature] = useState(null);
-    console.log({ chainId })
-    // 🟢 Network change hone par verify status reset
+
     useEffect(() => {
-        if (chainId) {
-            showModal()
+        if (chainId && isConnected && address) {
+            showModal();
             setVerified(false);
-            setSignature(null);
         }
     }, [chainId, isConnected, address]);
 
@@ -33,45 +23,10 @@ const WalletDetails = () => {
         console.log("Detected Chain ID:", chainId);
 
         try {
-            // Ensure MetaMask is open and focused
-            // await window.ethereum.request({ method: "eth_requestAccounts" });
-
-            // const domain = {
-            //     name: "WalletVerification",
-            //     version: "1",
-            //     chainId: Number(chainId) || 1,
-            //     verifyingContract: "0x0000000000000000000000000000000000000000",
-            // };
-
-            // const types = {
-            //     EIP712Domain: [
-            //         { name: "name", type: "string" },
-            //         { name: "version", type: "string" },
-            //         { name: "chainId", type: "uint256" },
-            //         { name: "verifyingContract", type: "address" },
-            //     ],
-            //     Verification: [
-            //         { name: "wallet", type: "address" },
-            //         { name: "timestamp", type: "uint256" },
-            //     ],
-            // };
-
-            // const message = { wallet: address, timestamp: Math.floor(Date.now() / 1000) };
-
-            // console.log("Signing Message:", message);
-
-            // const signedData = await signTypedDataAsync({
-            //     domain,
-            //     types,
-            //     primaryType: "Verification",
-            //     message,
-            // });
-
-            // console.log("Signature received:", signedData);
-            // setSignature(signedData);
+            // Simulate a verification process
             setVerified(true);
         } catch (error) {
-            console.error("Signing error:", error);
+            console.error("Verification error:", error);
             setVerified(false);
         }
     };
@@ -79,35 +34,21 @@ const WalletDetails = () => {
     const showModal = () => {
         setIsModalOpen(true);
     };
+
     const handleOk = () => {
         setIsModalOpen(false);
     };
+
     const handleCancel = () => {
         setIsModalOpen(false);
     };
 
-    const f = async () => {
-        try {
-            const balance = await fetchBalance(config, {
-                address,
-            })
-            console.log('balance', balance);
-
-        } catch (error) {
-
-        }
-    }
-
-    useEffect(() => {
-        f();
-    }, [address])
-
     return (
-        <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} style={{ backgroundColor: 'black' }}>
-            <div className="flex flex-col items-center p-6 bg-black text-white min-h-screen">
+        <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <div className="flex flex-col items-center p-6 bg-black text-white">
                 <h2 className="text-2xl font-bold mb-4">Wallet Details</h2>
                 {isConnected ? (
-                    <div className=" shadow-md p-4 rounded-lg w-full max-w-md text-center">
+                    <div className="shadow-md p-4 rounded-lg w-full max-w-md text-center">
                         {!verified ? (
                             <>
                                 <p className="text-red-500">❌ Wallet not verified</p>
@@ -138,16 +79,13 @@ const WalletDetails = () => {
                 )}
             </div>
         </Modal>
-
     );
 };
 
-// 🔹 WalletData Component (For fetching Network & Balance Details)
 const WalletData = ({ address, chainId }) => {
     const { data: balance } = useBalance({ address });
     const { data: ensName } = useEnsName({ address });
 
-    // 🟢 Support for Multiple Networks
     const networkNames = {
         1: "Ethereum Mainnet",
         137: "Polygon Mainnet",
@@ -165,7 +103,6 @@ const WalletData = ({ address, chainId }) => {
         25: "Cronos Mainnet",
         324: "zkSync Era Mainnet"
     };
-    
 
     return (
         <>

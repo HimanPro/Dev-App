@@ -8,7 +8,37 @@ import { useAccount, useBalance, useEnsName } from 'wagmi';
 import WalletDetails from './Components/WalletDetails';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // Function to handle FAQ item click
+  const handleToggle = (index) => {
+    if (activeIndex === index) {
+      // If the clicked item is already open, close it
+      setActiveIndex(null);
+    } else {
+      // Open the clicked item
+      setActiveIndex(index);
+    }
+  };
+
+  // FAQ data
+  const faqItems = [
+    {
+      question: "What is Blockchain?",
+      answer:
+        "Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.",
+    },
+    {
+      question: "Can I Transact Using Tokens?",
+      answer:
+        "Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.",
+    },
+    {
+      question: "How can I create a crypto-wallet?",
+      answer:
+        "Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.",
+    },
+  ];
 
 
   return (
@@ -33,7 +63,7 @@ function App() {
               <div className="col-lg-8">
                 <nav className="cryptobit_menu upper">
                   <ul className="nav_scroll">
-                    <li><a href="#">Home <span>+</span></a>
+                    <li><a href="#">Home</a>
                     </li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a>
@@ -61,16 +91,11 @@ function App() {
                 </a>
               </div>
               <ul className="nav_scroll">
-                <li><a href="#">Home <span>+</span></a>
+                <li><a href="#">Home</a>
                 </li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Services <span>+</span></a>
+                <li><a href="#">Services</a>
                 </li>
-                <li><a href="#">Pages <span>+</span></a>
-                </li>
-                <li><a href="#">Blog <span>+</span></a>
-                </li>
-                <li><a href="#">Contact</a></li>
               </ul>
               <div className="header-button upper1">
                 <ConnectButton />
@@ -592,7 +617,10 @@ function App() {
                 <div className="dreamit-section-title style-two pb-2">
                   <h4>FAQ</h4>
                   <h1>Frequently Q/A</h1>
-                  <p className="section-text">Globally network emerging action items with best-of-breed core <br />Efficiently build end-to-end mindshare</p>
+                  <p className="section-text">
+                    Globally network emerging action items with best-of-breed core <br />
+                    Efficiently build end-to-end mindshare
+                  </p>
                 </div>
               </div>
             </div>
@@ -600,24 +628,23 @@ function App() {
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="accordion-menu">
                   <ul className="accordion">
-                    <li>
-                      <a>What is Blockchain?</a>
-                      <p>Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.</p>
-                    </li>
-                    <li>
-                      <a>Can I Transections Using Tokens?</a>
-                      <p>Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.</p>
-                    </li>
-                    <li>
-                      <a>How can I create a crypto-wallet?</a>
-                      <p>Globally network emerging action items with best-of-breed core Efficiently build end-to-end mindshare cultivate top-line web-readiness before 24/7 scenarios.</p>
-                    </li>
+                    {faqItems.map((item, index) => (
+                      <li key={index}>
+                        <a
+                          onClick={() => handleToggle(index)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          {item.question}
+                        </a>
+                        {activeIndex === index && <p>{item.answer}</p>}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="faq-single-thumb">
-                  <img src="/images/resource/faq1.png" alt />
+                  <img src="/images/resource/faq1.png" alt="FAQ Image" />
                 </div>
               </div>
             </div>
@@ -768,9 +795,7 @@ function App() {
         {/* End cryptobit main menu Area */}
         {/*==================================================*/}
 
-
       </div>
-
 
     </>
   )
