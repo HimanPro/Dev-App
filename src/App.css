@@ -10,24 +10,24 @@ Version: 0.1
 ==============================*/
 
 .cryptobit_nav_manu {
-  background: transparent;
+  background: #040404;
   position: relative;
   z-index: 444;
-  margin-bottom: -88px;
+  /* margin-bottom: -88px; */
   border-bottom: 1px solid rgb(154, 153, 166, 0.3);
 }
 
 nav.cryptobit_menu {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
 }
 
 .cryptobit_menu ul {
   list-style: none;
-  display: inline-block;
-  margin-left: 5px;
+  display: flex;
+  margin: 0;
 }
 
 .cryptobit_menu>ul>li {
@@ -338,7 +338,7 @@ Nftpro banner section Area Css
 
 .style-two.hero-section {
   background: #050603;
-  height: 950px;
+  height: 850px;
 }
 
 /*hero content*/
@@ -354,6 +354,7 @@ Nftpro banner section Area Css
 
 .style-two .hero-title {
   position: relative;
+  color: white;
 }
 
 .style-two .hero-title h3 {
@@ -742,7 +743,7 @@ Nftpro feature Area Css
   margin-bottom: 30px;
 }
 
-.style-two .feature-icon1 i {
+.style-two .feature-icon1 {
   display: inline-block;
   font-size: 35px;
   color: #ffbd00;
@@ -828,7 +829,7 @@ Nftpro feature Area Css
   color: #fabb04;
 }
 
-.style-two .feature-single-box:hover .feature-icon1 i {
+.style-two .feature-single-box:hover .feature-icon1 {
   background: #ffbb00;
   color: #212529;
 }
@@ -1254,6 +1255,7 @@ Criptobit process area Css
 /*process content*/
 
 .process-title h4 {
+  color: white;
   font-size: 20px;
   font-weight: 600;
   padding: 15px 0 12px;
@@ -5029,4 +5031,8 @@ div#particles .slider-thumb {
 .loaded .loader {
   top: -100%;
   opacity: 0;
+}
+
+.flaticon-file {
+  background: url("/images/image.png");
 }

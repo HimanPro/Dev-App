@@ -44,13 +44,12 @@ function App() {
   return (
     <>
       <div>
-
         {/* Start cryptobit Main Menu Area */}
         {/*==================================================*/}
         <div id="sticky-header" className="cryptobit_nav_manu">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-lg-4">
+              <div className="col-lg-3">
                 <div className="logo">
                   <a className="logo_img upper1" href="index.html" title="cryptobit">
                     <img src="/images/logo2.png" alt />
@@ -60,7 +59,7 @@ function App() {
                   </a>
                 </div>
               </div>
-              <div className="col-lg-8">
+              <div className="col-lg-9">
                 <nav className="cryptobit_menu upper">
                   <ul className="nav_scroll">
                     <li><a href="#">Home</a>
@@ -105,7 +104,6 @@ function App() {
         </div>
 
         {/* ===============//banner section start here \\================= */}
-        <div className="clearfix" style={{ clear: 'both' }} />
         <div className="hero-section style-two d-flex align-items-center" id="home">
           <div className="container">
             <div className="row align-items-center">
@@ -156,15 +154,14 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="clearfix" style={{ clear: 'both' }} />
         {/* ===============//banner section end here \\================= */}
         {/*==================================================*/}
         {/* Start cryptobit feature Area */}
         {/*==================================================*/}
-        <div className="feature-area style-two pt-90 pb-80" id="feature">
+        <div className="feature-area style-two" id="feature" style={{paddingTop: '100px'}}>
           <div className="container">
             <div className="row">
-              <div className="col-lg-12 col-sm-12">
+              <div className="col-lg-12 col-sm-12" style={{paddingBottom: '70px'}}>
                 <div className="dreamit-section-title style-two text-center pb-65">
                   <h4>CRYPTOBIT FEATURES</h4>
                   <h1>The most trusted way for</h1>
@@ -177,6 +174,7 @@ function App() {
                 <div className="feature-single-box">
                   <div className="feature-box-inner">
                     <div className="feature-icon1">
+                    <img src="/images/fav-icon/image.png" alt="" width={50}/>
                       <i className="flaticon flaticon-layers restly-flaticon" />
                     </div>
                     <div className="feature-title">
@@ -190,7 +188,7 @@ function App() {
                 <div className="feature-single-box upper1">
                   <div className="feature-box-inner">
                     <div className="feature-icon1">
-                      <i className="flaticon-file" />
+                      <img src="/images/fav-icon/presentation.png" alt="" width={50}/>
                     </div>
                     <div className="feature-title">
                       <h3>External Method</h3>
@@ -202,8 +200,9 @@ function App() {
               <div className="col-lg-4 col-md-6 col-sm-12">
                 <div className="feature-single-box upper2">
                   <div className="feature-box-inner">
-                    <div className="feature-icon1">
-                      <i className="flaticon flaticon-shield-1 restly-flaticon" />
+                    <div className="feature-icon1">                      
+                      <img src="/images/fav-icon/cyber-security.png" alt="" width={50}/>
+
                     </div>
                     <div className="feature-title">
                       <h3>High Security</h3>
@@ -214,7 +213,9 @@ function App() {
               </div>
               <div className="col-lg-12">
                 <div className="feature-bottom-text text-center">
-                  <p> <i className="flaticon-light-bulb" /> Do you Know More? <span><a href="#">Learn More</a></span></p>
+                  <p className='d-flex align-items-center justify-content-center gap-2'>
+                   <span>  <img src="/images/fav-icon/pen.png" alt="" width={30}/> </span>
+                    <span>Do you Know More? <span><a href="#">Learn More</a></span></span></p>
                 </div>
               </div>
             </div>
@@ -226,7 +227,7 @@ function App() {
         {/*==================================================*/}
         {/* Start cryptobit about Area */}
         {/*==================================================*/}
-        <div className="about-area style-two pt-100 pb-100" id="about">
+        <div className="about-area style-two" style={{paddingTop: '100px'}} id="about">
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12">
@@ -304,7 +305,7 @@ function App() {
         {/*==================================================*/}
         {/* Start cryptobit feature Area */}
         {/*==================================================*/}
-        <div className="services-area style-two pt-90 pb-100">
+        <div className="services-area style-two" style={{paddingTop: '100px'}}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-sm-12">
@@ -356,7 +357,7 @@ function App() {
         {/*==================================================*/}
         {/* Start cryptobit process Area */}
         {/*==================================================*/}
-        <div className="process-area pt-80 pb-70" id="process">
+        <div className="process-area" id="process" style={{paddingTop: '100px'}}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-sm-12">
@@ -610,7 +611,7 @@ function App() {
         {/* End Cryptobit testimonial Area */}
         {/*==================================================*/}
         {/* ===============//faq section start here \\================= */}
-        <div className="faq-area style-two pt-100">
+        <div className="faq-area style-two" style={{paddingTop: '100px'}}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12">

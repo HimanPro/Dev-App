@@ -411,6 +411,7 @@
     .style-two.hero-section {
         background: #050603;
     }
+ 
     .hero-main-thumb {
         left: 0;
     }
@@ -1339,6 +1340,10 @@
     .cryptobit_nav_manu {
         display: none;
     }
+    .upper1 .imgss {
+        width: 160px;
+        }
+
     .style-two .dreamit-hero-thumb {
         display: none;
     }
@@ -1353,8 +1358,17 @@
     .cryptobit_nav_manu {
         display: none;
     }
+    .upper1 .imgss {
+    width: 160px;
+    }
     .style-two .dreamit-hero-thumb {
         display: none;
+    }
+    .cripto_menu{
+        display: flex;
+        padding: 15px 10px;
+        justify-content: space-between;
+        align-items: center;
     }
     .style-two.hero-section {
         height: 650px;

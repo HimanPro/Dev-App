@@ -10,7 +10,7 @@ function ConnectWallet() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const buttonWidth = width < 800 ? '100%' : '80%';
+  // const buttonWidth = width < 800 ? '100%' : '80%';
 
   return (
     <ConnectButton.Custom>
@@ -31,20 +31,24 @@ function ConnectWallet() {
           (!authenticationStatus || authenticationStatus === 'authenticated');
 
         const buttonStyle = {
-          background: 'linear-gradient(to right, #b9afbd, #475faa, #6dbe46)',
-          color: 'white',
-          border: 'none',
+          display: 'inline-block',
           padding: '10px 20px',
+          margin: '12px 0',
+          fontWeight: '600',
+          fontFamily: "Montserrat",
+          background: '#ffbd00',
+          color: '#090909',
           borderRadius: '5px',
-          cursor: 'pointer',
-          fontSize: '16px',
-          width: buttonWidth, // Dynamic width based on screen size
-        };
+          border: '1px solid #ffbd00',
+          position: 'relative',
+          zIndex: '1',
+          width: 'max-content',
+          };
 
         const containerStyle = {
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
+          // width: 'max-content',
+          // display: 'flex',
+          // justifyContent: 'center',
         };
 
         return (
@@ -92,7 +96,7 @@ function ConnectWallet() {
                         ...buttonStyle,
                         display: 'flex',
                         alignItems: 'center',
-                        width: buttonWidth, // Dynamic width based on screen size
+                        // width: buttonWidth, 
                       }}
                       type="button"
                     >
@@ -100,9 +104,9 @@ function ConnectWallet() {
                         <div
                           style={{
                             background: chain.iconBackground,
-                            width: 12,
-                            height: 12,
-                            borderRadius: 999,
+                            width: 25,
+                            height: 25,
+                            borderRadius: 50,
                             overflow: 'hidden',
                             marginRight: 4,
                           }}
@@ -124,11 +128,9 @@ function ConnectWallet() {
                       type="button"
                       style={{
                         ...buttonStyle,
-                        width: buttonWidth, // Dynamic width based on screen size
                       }}
                     >
                       {account.displayName}
-                      {account.displayBalance ? ` (${account.displayBalance})` : ''}
                     </button>
                   </div>
                 );
